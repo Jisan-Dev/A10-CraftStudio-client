@@ -55,27 +55,35 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base font-semibold gap-2 font-gsans text-base-content">
-            <li className="hover:text-neutral-900">
-              <NavLink className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary' : '')} to="/">
+          <ul className="menu-horizontal px-1 text-base font-semibold gap-2 font-gsans text-base-content">
+            <li>
+              <NavLink
+                className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
+                to="/">
                 Home
               </NavLink>
             </li>
-            <li className="hover:text-neutral-900">
-              <NavLink className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary' : '')} to="/all-art&craft-items">
+            <li>
+              <NavLink
+                className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
+                to="/all-art&craft-items">
                 All Art & Craft Items
               </NavLink>
             </li>
             {user && (
-              <li className="hover:text-neutral-900">
-                <NavLink className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary' : '')} to="/add-craft-item">
+              <li>
+                <NavLink
+                  className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
+                  to="/add-craft-item">
                   Add Craft Item
                 </NavLink>
               </li>
             )}
             {user && (
               <li className="hover:text-neutral-900">
-                <NavLink className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary' : '')} to="/my-art&craft_list">
+                <NavLink
+                  className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
+                  to="/my-art&craft_list">
                   My Art & Craft List
                 </NavLink>
               </li>

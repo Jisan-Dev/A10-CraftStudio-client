@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div>
       <div className="container mx-auto flex items-center justify-center font-gsans max-sm:px-3 pb-14 max-sm:py-5 max-sm:flex-col overflow-x-hidden ">
-        <div data-aos="fade-right" data-aos-duration="1000" className="w-1/2 max-sm:w-full px-20">
+        <div data-aos="fade-right" data-aos-duration="1000" className="w-1/2 max-sm:w-full">
           <div className="w-full max-w-md p-6 m-auto mx-auto bg-base-100 rounded-xl shadow-sm shadow-primary border-t border-t-primary">
             <div className="flex justify-center items-center mx-auto">
               <h1 className="text-3xl sm:text-4xl text-transparent bg-gradient-to-br from-indigo-600 via-blue-600 to-secondary bg-clip-text font-black font-gsans tracking-wider">
