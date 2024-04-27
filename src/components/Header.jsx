@@ -55,7 +55,7 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base font-semibold gap-2 font-kufam text-base-content">
+          <ul className="menu menu-horizontal px-1 text-base font-semibold gap-2 font-gsans text-base-content">
             <li className="hover:text-neutral-900">
               <NavLink className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary' : '')} to="/">
                 Home
@@ -104,10 +104,10 @@ const Header = () => {
             </div>
           ) : (
             <div className="group relative ">
-              <Link to="/login" className="btn btn-primary btn-outline lg:px-6 font-bold lg:text-lg">
+              <Link to="/login" className="btn btn-primary btn-outline lg:px-6 font-bold lg:text-base">
                 Login
               </Link>
-              <Link to="/register" className="btn btn-primary lg:px-6 font-bold lg:text-lg ml-2">
+              <Link to="/register" className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
                 Register
               </Link>
             </div>
