@@ -19,7 +19,7 @@ const ErrorPage = () => {
       <section className="bg-base-100 dark:bg-gray-900">
         <div className="container min-h-screen px-6 py-12 mx-auto flex-col sm:flex-row lg:flex lg:items-center lg:gap-8">
           <div className="wf-ull lg:w-1/2">
-            <p className="text-sm font-semibold text-indigo-500">404 error</p>
+            <p className="text-sm font-semibold text-indigo-500">404 error!</p>
             <h1 className="mt-3 text-2xl font-semibold text-gray-800  md:text-3xl">Page not found</h1>
             <p className="mt-4 text-gray-500 dark:text-gray-400">Sorry, the page you are looking for doesn&apos;t exist.Here are some helpful links:</p>
 
