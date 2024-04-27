@@ -1,52 +1,54 @@
 import React, { useContext } from 'react';
-// import { AuthContext } from '../providers/AuthProvider';
-// import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
 const SocialLogin = () => {
-  // const { googleLogin, githubLogin } = useContext(AuthContext);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const { googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // const socialLoginHandler = (loginMethod) => {
-  //   loginMethod()
-  //     .then((result) => {
-  //       if (result.user) {
-  //         console.log('logged in with social: ', result.user);
-  //         toast.success('successfully logged in', {
-  //           position: 'top-right',
-  //           autoClose: 3000,
-  //           hideProgressBar: false,
-  //           closeOnClick: true,
-  //           pauseOnHover: true,
-  //           draggable: true,
-  //           progress: undefined,
-  //           theme: 'dark',
-  //         });
+  console.log(googleLogin);
 
-  //         navigate(location.state ?? '/');
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       toast.error(error.code, {
-  //         position: 'top-right',
-  //         autoClose: 5000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: 'dark',
-  //       });
-  //       console.error(error);
-  //     });
-  // };
+  const socialLoginHandler = (loginMethod) => {
+    loginMethod()
+      .then((result) => {
+        if (result.user) {
+          console.log('logged in with social: ', result.user);
+          // toast.success('successfully logged in', {
+          //   position: 'top-right',
+          //   autoClose: 3000,
+          //   hideProgressBar: false,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          //   progress: undefined,
+          //   theme: 'dark',
+          // });
+
+          navigate(location.state ?? '/');
+        }
+      })
+      .catch((error) => {
+        // toast.error(error.code, {
+        //   position: 'top-right',
+        //   autoClose: 5000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: 'dark',
+        // });
+        console.error(error);
+      });
+  };
 
   return (
     <div className="flex items-center mt-6 -mx-2">
       <button
-        // onClick={() => socialLoginHandler(googleLogin)}
+        onClick={() => socialLoginHandler(googleLogin)}
         type="button"
         className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:bg-blue-400 focus:outline-none">
         <svg className="w-4 h-4 mx-2 fill-current" viewBox="0 0 24 24">
