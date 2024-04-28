@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../providers/AuthProvider';
@@ -7,10 +7,12 @@ import signup from '../assets/signup.svg';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import SocialLogin from '../components/SocialLogin';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading, loginUser } = useContext(AuthContext);
   const [isPassVisible, setIsPassVisible] = useState(false);
+  const navigate = useNavigate();
 
   const schema = z.object({
     email: z.string().email(),
@@ -31,7 +33,35 @@ const Login = () => {
 
   const submitHandler = (data) => {
     console.log(data);
-    reset();
+    loginUser(data.email, data.password)
+      .then((result) => {
+        toast.success('successfully logged in', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+        console.log('logged in ', result.user);
+        navigate(location.state ?? '/');
+        reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.code, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+      });
   };
   return (
     <div>
@@ -88,7 +118,7 @@ const Login = () => {
 
               <div className="mt-6">
                 <button className="w-full px-6 py-2.5 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-                  {loading ? <span className="loading loading-infinity loading-sm p-0 h-4 -mb-1"></span> : 'Sign Up'}
+                  {loading ? <span className="loading loading-infinity loading-sm p-0 h-4 -mb-1"></span> : 'Login'}
                 </button>
               </div>
             </form>
