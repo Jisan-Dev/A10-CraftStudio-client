@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SocialLogin = () => {
   const { googleLogin, githubLogin } = useContext(AuthContext);
@@ -16,31 +16,31 @@ const SocialLogin = () => {
       .then((result) => {
         if (result.user) {
           console.log('logged in with social: ', result.user);
-          // toast.success('successfully logged in', {
-          //   position: 'top-right',
-          //   autoClose: 3000,
-          //   hideProgressBar: false,
-          //   closeOnClick: true,
-          //   pauseOnHover: true,
-          //   draggable: true,
-          //   progress: undefined,
-          //   theme: 'dark',
-          // });
+          toast.success('successfully logged in', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          });
 
           navigate(location.state ?? '/');
         }
       })
       .catch((error) => {
-        // toast.error(error.code, {
-        //   position: 'top-right',
-        //   autoClose: 5000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: 'dark',
-        // });
+        toast.error(error.code, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
         console.error(error);
       });
   };

@@ -2,6 +2,8 @@ import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import defaultPlaceholder from '../assets/Default_Placeholder.webp';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Header = () => {
   const [clicked, setClicked] = useState(false);
@@ -12,6 +14,16 @@ const Header = () => {
     logoutUser()
       .then(() => {
         console.log('logged out user');
+        toast.success('successfully logged out', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
       })
       .catch((error) => console.log(error));
   };
