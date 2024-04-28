@@ -90,10 +90,10 @@ const Header = () => {
             )}
           </ul>
         </div>
-        <div className="navbar-end ">
+        <div className="navbar-end flex items-center">
           {loading && <span className="loading loading-infinity loading-lg mr-4"></span>}
           {user ? (
-            <div className="relative group">
+            <div className="relative group flex items-center">
               <div className="tooltip tooltip-left cursor-pointer -mb-1" data-tip={user.displayName}>
                 <div className="avatar">
                   <div className="w-12 rounded-full mr-2">
@@ -106,7 +106,7 @@ const Header = () => {
                 <h1>sdksad</h1>
               </div> */}
 
-              <button onClick={userLogout} className="btn btn-neutral lg:px-6 font-bold lg:text-lg">
+              <button onClick={userLogout} className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
                 Sign Out
               </button>
             </div>

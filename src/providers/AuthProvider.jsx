@@ -1,19 +1,42 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+  // Social providers
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const googleLogin = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const authInfo = { user, googleLogin };
+  const githubLogin = () => {
+    return signInWithPopup(auth, githubProvider);
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        console.log('onAuthStateChanged', currentUser);
+      } else {
+        setUser(null);
+        console.log('logged out state changed', currentUser);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const authInfo = { user, googleLogin, githubLogin };
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
 
