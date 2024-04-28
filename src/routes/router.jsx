@@ -5,6 +5,9 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import ErrorPage from '../pages/ErrorPage';
 import Homepage from '../pages/Homepage';
+import AddCraftItem from '../pages/AddCraftItem';
+import PrivateRoute from './PrivateRoute';
+import MyCraftList from '../pages/MyCraftList';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,22 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/add-craft-item',
+        element: (
+          <PrivateRoute>
+            <AddCraftItem />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/my-art&craft_list',
+        element: (
+          <PrivateRoute>
+            <MyCraftList />
+          </PrivateRoute>
+        ),
       },
     ],
   },
