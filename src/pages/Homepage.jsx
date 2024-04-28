@@ -33,7 +33,7 @@ const Homepage = () => {
               Explore a world of vibrant colors, versatile mediums, and boundless imagination. Find everything you need to bring your artistic visions to life
             </p>
             <div data-aos="fade-zoom-in" data-aos-duration="600" className="flex gap-4 mt-8">
-              <Link to="/register" className="btn btn-primary text-white font-bold hover:bg-primary hover:text-white sm:text-lg">
+              <Link to="/register" className="btn btn-primary text-white font-bold hover:text-white sm:text-lg">
                 Get Started
               </Link>
               <a href="#properties" className="btn bg-indigo-500 text-slate-100 hover:bg-indigo-600 border-none hover:text-slate-100 font-bold sm:text-lg">
@@ -51,7 +51,7 @@ const Homepage = () => {
               Explore a world of vibrant colors, versatile mediums, and boundless imagination. Find everything you need to bring your artistic visions to life
             </p>
             <div className="flex gap-4 mt-8">
-              <Link to="/register" className="btn btn-primary text-white font-bold hover:bg-primary hover:text-white sm:text-lg">
+              <Link to="/register" className="btn btn-primary text-white font-bold hover:text-white sm:text-lg">
                 Get Started
               </Link>
               <a href="#properties" className="btn bg-indigo-500 text-slate-100 hover:bg-indigo-600 border-none hover:text-slate-100 font-bold sm:text-lg">
@@ -69,7 +69,7 @@ const Homepage = () => {
               Explore a world of vibrant colors, versatile mediums, and boundless imagination. Find everything you need to bring your artistic visions to life
             </p>
             <div className="flex gap-4 mt-8">
-              <Link to="/register" className="btn btn-primary text-white font-bold hover:bg-primary hover:text-white sm:text-lg">
+              <Link to="/register" className="btn btn-primary text-white font-bold hover:text-white sm:text-lg">
                 Get Started
               </Link>
               <a href="#properties" className="btn bg-indigo-500 text-slate-100 hover:bg-indigo-600 border-none hover:text-slate-100 font-bold sm:text-lg">

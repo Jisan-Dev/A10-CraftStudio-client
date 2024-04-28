@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../providers/AuthProvider';
@@ -7,11 +7,12 @@ import signup from '../assets/signup.svg';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import SocialLogin from '../components/SocialLogin';
+import { toast } from 'react-toastify';
 
 const Register = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading, createUser, handleUpdateUser, setIsUserUpdated, isUserUpdated } = useContext(AuthContext);
   const [isPassVisible, setIsPassVisible] = useState(false);
-
+  const navigate = useNavigate();
   const schema = z.object({
     name: z.string().min(2).max(50),
     email: z.string().email(),
@@ -33,6 +34,41 @@ const Register = () => {
 
   const submitHandler = (data) => {
     console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        if (result.user) {
+          handleUpdateUser(data.name, data.photo).then(() => {
+            setIsUserUpdated(!isUserUpdated);
+            console.log('manually registered + updated', result.user);
+            reset();
+            toast.success('Successfully registered', {
+              position: 'top-right',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'dark',
+            });
+
+            navigate('/');
+          });
+        }
+      })
+      .catch((error) => {
+        toast.error(error.code, {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
+        console.log(error);
+      });
     reset();
   };
   return (

@@ -118,8 +118,8 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="absolute transform top-10 right-10 opacity-0  bg-primary bg-opacity-10 p-6 transition-all duration-300 invisible group-hover:visible group-hover:opacity-100 w-48 z-10 flex flex-col items-center justify-center gap-4 rounded-xl">
-                <h1 className="font-bold text-lg text-base-content">{user.displayName}</h1>
+              <div className="absolute transform top-10 right-10 opacity-0  bg-indigo-300 p-6 transition-all duration-300 invisible group-hover:visible group-hover:opacity-100 w-48 z-50 flex flex-col items-center justify-center gap-4 rounded-xl">
+                <h1 className="font-bold text-lg text-neutral-900">{user.displayName}</h1>
                 <button onClick={userLogout} className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
                   Sign Out
                 </button>
