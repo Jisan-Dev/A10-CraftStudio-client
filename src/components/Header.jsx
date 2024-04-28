@@ -6,9 +6,15 @@ import defaultPlaceholder from '../assets/Default_Placeholder.webp';
 const Header = () => {
   const [clicked, setClicked] = useState(false);
 
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading, logoutUser } = useContext(AuthContext);
 
-  const userLogout = () => {};
+  const userLogout = () => {
+    logoutUser()
+      .then(() => {
+        console.log('logged out user');
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <header className="container mx-auto font-gsans overflow-x-clip">
       <div className="navbar bg-base-100">
