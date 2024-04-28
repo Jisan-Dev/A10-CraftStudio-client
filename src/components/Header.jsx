@@ -111,29 +111,26 @@ const Header = () => {
         <div className="navbar-end flex items-center">
           {loading && <span className="loading loading-infinity loading-lg mr-4"></span>}
           {user ? (
-            <div className="relative group flex items-center">
-              <div className="tooltip tooltip-left cursor-pointer -mb-1" data-tip={user.displayName}>
-                <div className="avatar">
-                  <div className="w-12 rounded-full mr-2">
-                    <img src={user.photoURL || defaultPlaceholder} referrerPolicy="no-referrer" />
-                  </div>
+            <div className="relative group flex items-center transition-all">
+              <div className="avatar">
+                <div className="w-12 rounded-full mr-2 cursor-pointer">
+                  <img src={user.photoURL || defaultPlaceholder} referrerPolicy="no-referrer" />
                 </div>
               </div>
 
-              {/* <div className="absolute transform translate-x-48  bg-red-400 p-10 transition-all duration-300 group-hover:-translate-x-40 ">
-                <h1>sdksad</h1>
-              </div> */}
-
-              <button onClick={userLogout} className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
-                Sign Out
-              </button>
+              <div className="absolute transform top-10 right-10 opacity-0  bg-primary bg-opacity-10 p-6 transition-all duration-300 invisible group-hover:visible group-hover:opacity-100 w-48 z-10 flex flex-col items-center justify-center gap-4 rounded-xl">
+                <h1 className="font-bold text-lg text-base-content">{user.displayName}</h1>
+                <button onClick={userLogout} className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
+                  Sign Out
+                </button>
+              </div>
             </div>
           ) : (
             <div className="group relative ">
               <Link to="/login" className="btn btn-primary btn-outline lg:px-6 font-bold lg:text-base">
                 Login
               </Link>
-              <Link to="/register" className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2">
+              <Link to="/register" className="btn btn-primary lg:px-6 font-bold lg:text-base ml-2 max-sm:hidden">
                 Register
               </Link>
             </div>
