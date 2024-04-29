@@ -1,11 +1,32 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const handleAddProduct = (data) => {
     console.log(data);
+    fetch('http://localhost:5000/addProduct', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            icon: 'success',
+            title: '<strong>Product added successfully</strong>',
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: '<strong>Something went wrong</strong>',
+          });
+        }
+      });
+    reset();
   };
   return (
     <div className="container mx-auto py-10 font-gsans">
