@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdDelete } from 'react-icons/md';
+import { BsPencilSquare } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 
-const ArtCard = ({ product }) => {
+const ArtCard = ({ product, isDelete }) => {
   return (
     <div>
       {/* <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay={index * 100} data-aos-duration="1000"> */}
       <div className="block rounded-lg p-4 shadow-sm shadow-primary border-t border-t-primary font-gsans">
-        <img alt="" src={product.image} className="h-56 w-full rounded-md object-cover" />
+        <img alt="" src={product?.image} className="h-56 w-full rounded-md object-cover" />
 
         <div className="mt-2">
           <dl>
@@ -46,8 +48,8 @@ const ArtCard = ({ product }) => {
             </div>
           </dl>
 
-          {/* <div className={`flex ${isDelete ? 'justify-between items-center' : 'justify-end'} `}> */}
-          <div className={`flex justify-end`}>
+          <div className={`flex ${isDelete ? 'justify-between items-center' : 'justify-end'} `}>
+            {/* <div className={`flex justify-end`}> */}
             <button className="group flex items-center bg-transparent p-2 text-sm font-medium text-gray-600 mt-4">
               <Link
                 to={``}
@@ -66,11 +68,16 @@ const ArtCard = ({ product }) => {
               </svg>
             </button>
 
-            {/* {isDelete && (
-              <div className="tooltip tooltip-left" data-tip="remove">
-                <MdDelete onClick={() => deleteFunc(id)} className="text-2xl cursor-pointer -mb-3" />
+            {isDelete && (
+              <div className="flex gap-4 items-center justify-center leading-none pt-3">
+                <div className="tooltip tooltip-left" data-tip="remove">
+                  <MdDelete className="text-2xl cursor-pointer text-primary" />
+                </div>
+                <div className="tooltip tooltip-left" data-tip="remove">
+                  <BsPencilSquare className="text-xl text-primary cursor-pointer" />
+                </div>
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </div>
@@ -82,4 +89,5 @@ export default ArtCard;
 
 ArtCard.propTypes = {
   product: PropTypes.object.isRequired,
+  isDelete: PropTypes.bool,
 };
