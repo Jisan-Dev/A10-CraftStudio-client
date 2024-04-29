@@ -7,9 +7,12 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import ArtCard from '../components/ArtCard';
 
 const Homepage = () => {
+  const allProducts = useLoaderData();
+  console.log('allProducts', allProducts);
   return (
     <div className="container mx-auto font-gsans">
       <Swiper
@@ -79,6 +82,18 @@ const Homepage = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+
+      <section className="my-24">
+        <header>
+          <h1 className="text-4xl font-bold text-center mb-2">Craft Items</h1>
+          <p className="text-center text-xl text-base-content font-medium mb-4">Find the best craft and art items you need</p>
+        </header>
+        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {allProducts.map((product) => (
+            <ArtCard key={product._id} product={product} />
+          ))}
+        </main>
+      </section>
     </div>
   );
 };

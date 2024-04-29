@@ -86,7 +86,6 @@ const AddCraftItem = () => {
                 <option value="Portrait Drawing">Portrait Drawing</option>
                 <option value="Water color Painting">Water color Painting</option>
                 <option value="Oil Painting">Oil Painting</option>
-                <option value="Oil Painting">Oil Painting</option>
                 <option value="Charcoal Sketching">Charcoal Sketching</option>
                 <option value="Cartoon Drawing">Cartoon Drawing</option>
               </select>
@@ -96,7 +95,7 @@ const AddCraftItem = () => {
               </label>
               <input
                 className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-300  focus:outline-none"
-                type="text"
+                type="number"
                 placeholder="Enter Price"
                 id="Price"
                 {...register('price')}
@@ -143,7 +142,7 @@ const AddCraftItem = () => {
               <input
                 className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-300  focus:outline-none"
                 type="text"
-                placeholder="eg: 1day 2hours"
+                placeholder="eg: 1 - 2 weeks"
                 id="processing_time"
                 {...register('processing_time')}
               />
@@ -154,7 +153,7 @@ const AddCraftItem = () => {
               <input
                 className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-300  focus:outline-none"
                 type="text"
-                placeholder="eg: 1day 2hours"
+                placeholder="eg: in stock / made to order"
                 id="stock_status"
                 {...register('stock_status')}
               />

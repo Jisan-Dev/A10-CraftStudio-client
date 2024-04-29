@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />,
+        loader: () => fetch('http://localhost:5000/allProducts'),
       },
       {
         path: 'app',
