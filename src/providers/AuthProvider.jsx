@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
         console.log('onAuthStateChanged', currentUser);
       } else {
-        // setLoading(false);
+        setLoading(false);
         setUser(null);
         console.log('logged out state changed', currentUser);
       }
