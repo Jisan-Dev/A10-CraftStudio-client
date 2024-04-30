@@ -2,7 +2,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllCraftItems = () => {
   const data = useLoaderData();
-  console.log('hehe', data);
+
   return (
     <div className="container mx-auto font-gsans overflow-x-auto">
       <header className="my-6">
