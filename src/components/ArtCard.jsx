@@ -3,8 +3,38 @@ import { Link } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
 import { BsPencilSquare } from 'react-icons/bs';
 import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
 
-const ArtCard = ({ product, isDelete }) => {
+const ArtCard = ({ product, isDelete, deleted, setDeleted }) => {
+  const handleDelete = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/deleteProduct/${product._id}`, {
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'Your file has been deleted.',
+                icon: 'success',
+              });
+              setDeleted(!deleted);
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       {/* <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay={index * 100} data-aos-duration="1000"> */}
@@ -70,7 +100,7 @@ const ArtCard = ({ product, isDelete }) => {
             {isDelete && (
               <div className="flex gap-4 items-center justify-center leading-none pt-3">
                 <div className="tooltip tooltip-left" data-tip="remove">
-                  <MdDelete className="text-2xl cursor-pointer text-primary" />
+                  <MdDelete onClick={handleDelete} className="text-2xl cursor-pointer text-primary" />
                 </div>
                 <div className="tooltip tooltip-left" data-tip="remove">
                   <Link to={`/updateProduct/${product._id}`}>
@@ -91,4 +121,6 @@ export default ArtCard;
 ArtCard.propTypes = {
   product: PropTypes.object.isRequired,
   isDelete: PropTypes.bool,
+  deleted: PropTypes.bool,
+  setDeleted: PropTypes.func,
 };

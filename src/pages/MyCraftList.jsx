@@ -5,13 +5,14 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const MyCraftList = () => {
   const [allCrafts, setAllCrafts] = useState([]);
+  const [deleted, setDeleted] = useState(false);
   const { user } = useContext(AuthContext);
   const [customization, setCustomization] = useState('');
   useEffect(() => {
     fetch(`http://localhost:5000/allProducts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAllCrafts(data));
-  }, [user]);
+  }, [user, deleted]);
   console.log(allCrafts);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ const MyCraftList = () => {
       <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {allCrafts &&
           allCrafts.map((craft) => {
-            return <ArtCard key={craft._id} product={craft} isDelete={true} />;
+            return <ArtCard key={craft._id} product={craft} isDelete={true} deleted={deleted} setDeleted={setDeleted} />;
           })}
       </main>
     </div>

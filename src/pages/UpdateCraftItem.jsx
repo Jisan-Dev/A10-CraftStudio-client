@@ -19,7 +19,7 @@ const UpdateCraftItem = () => {
 
   console.log(product);
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleUpdateProduct = (data) => {
     const actualData = {
