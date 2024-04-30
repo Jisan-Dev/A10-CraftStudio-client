@@ -9,7 +9,7 @@ const UpdateCraftItem = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/productDetails/${id}`)
+    fetch(`https://a10-craft-studio-server.vercel.app/productDetails/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -36,7 +36,7 @@ const UpdateCraftItem = () => {
       stock_status: data.stock_status || product?.stock_status,
     };
     console.log('actal', actualData);
-    fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/updateProduct/${id}`, {
+    fetch(`https://a10-craft-studio-server.vercel.app/updateProduct/${id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(actualData),

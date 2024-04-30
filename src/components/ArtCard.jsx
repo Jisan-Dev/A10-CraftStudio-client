@@ -18,7 +18,7 @@ const ArtCard = ({ product, isDelete, deleted, setDeleted }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/deleteProduct/${product._id}`, {
+        fetch(`https://a10-craft-studio-server.vercel.app/deleteProduct/${product._id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

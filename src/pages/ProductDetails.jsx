@@ -5,7 +5,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/productDetails/${id}`)
+    fetch(`https://a10-craft-studio-server.vercel.app/productDetails/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

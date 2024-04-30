@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />,
-        loader: () => fetch('https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/allProducts'),
+        loader: () => fetch('https://a10-craft-studio-server.vercel.app/allProducts'),
       },
       {
         path: 'app',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/all-art&craft-items',
         element: <AllCraftItems />,
-        loader: () => fetch('https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/allProducts'),
+        loader: () => fetch('https://a10-craft-studio-server.vercel.app/allProducts'),
       },
       {
         path: '/category/:name',

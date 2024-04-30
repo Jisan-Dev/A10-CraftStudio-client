@@ -9,7 +9,7 @@ const MyCraftList = () => {
   const { user } = useContext(AuthContext);
   const [customization, setCustomization] = useState('');
   useEffect(() => {
-    fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/allProducts/${user?.email}`)
+    fetch(`https://a10-craft-studio-server.vercel.app/allProducts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAllCrafts(data));
   }, [user, deleted]);
@@ -20,14 +20,14 @@ const MyCraftList = () => {
       return;
     }
     if (customization === 'yes') {
-      fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/allProducts/${user?.email}`)
+      fetch(`https://a10-craft-studio-server.vercel.app/allProducts/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setAllCrafts(data.filter((craft) => craft.customization === 'yes'));
         });
       return;
     } else if (customization === 'no') {
-      fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/allProducts/${user?.email}`)
+      fetch(`https://a10-craft-studio-server.vercel.app/allProducts/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setAllCrafts(data.filter((craft) => craft.customization === 'no'));
