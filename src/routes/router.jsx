@@ -10,6 +10,7 @@ import PrivateRoute from './PrivateRoute';
 import MyCraftList from '../pages/MyCraftList';
 import ProductDetails from '../pages/ProductDetails';
 import UpdateCraftItem from '../pages/UpdateCraftItem';
+import AllCraftItems from '../pages/AllCraftItems';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/all-art&craft-items',
+        element: <AllCraftItems />,
+        loader: () => fetch('http://localhost:5000/allProducts'),
       },
       {
         path: '/productDetails/:id',

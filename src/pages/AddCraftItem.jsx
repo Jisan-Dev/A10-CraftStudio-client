@@ -5,18 +5,18 @@ import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const { register, handleSubmit, reset } = useForm();
-  console.log(id);
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    fetch(`http://localhost:5000/productDetails/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-        console.log(data);
-      });
-  }, [id]);
+
+  // const [product, setProduct] = useState({});
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/productDetails/${id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProduct(data);
+  //       console.log('data',data);
+  //     });
+  // }, [id]);
 
   const handleAddProduct = (data) => {
     console.log(data);
@@ -70,7 +70,6 @@ const AddCraftItem = () => {
                 placeholder="Name"
                 id="name"
                 {...register('user_name')}
-                defaultValue={product?.user_name}
               />
 
               <label className="block mb-2 font-medium" htmlFor="item_name">
