@@ -1,9 +1,22 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
+  const { id } = useParams();
   const { register, handleSubmit, reset } = useForm();
+  console.log(id);
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    fetch(`http://localhost:5000/productDetails/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        console.log(data);
+      });
+  }, [id]);
 
   const handleAddProduct = (data) => {
     console.log(data);
@@ -28,6 +41,7 @@ const AddCraftItem = () => {
       });
     reset();
   };
+
   return (
     <div className="container mx-auto py-10 font-gsans">
       <div className="shadow-sm shadow-primary rounded-lg p-5 border-t border-t-indigo-400">
@@ -38,10 +52,7 @@ const AddCraftItem = () => {
               <i className="bx bxs-alarm-add"></i>
             </span>
             <span className="dark:text-white">
-              <span className="text-primary">
-                {/* {update ? 'Update ' : 'Add '} */}
-                Add{' '}
-              </span>
+              <span className="text-primary">Add </span>
               Your Craft
             </span>
           </p>
@@ -59,6 +70,7 @@ const AddCraftItem = () => {
                 placeholder="Name"
                 id="name"
                 {...register('user_name')}
+                defaultValue={product?.user_name}
               />
 
               <label className="block mb-2 font-medium" htmlFor="item_name">

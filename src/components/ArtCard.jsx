@@ -73,7 +73,9 @@ const ArtCard = ({ product, isDelete }) => {
                   <MdDelete className="text-2xl cursor-pointer text-primary" />
                 </div>
                 <div className="tooltip tooltip-left" data-tip="remove">
-                  <BsPencilSquare className="text-xl text-primary cursor-pointer" />
+                  <Link to={`/updateProduct/${product._id}`}>
+                    <BsPencilSquare className="text-xl text-primary cursor-pointer" />
+                  </Link>
                 </div>
               </div>
             )}
