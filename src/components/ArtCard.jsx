@@ -4,6 +4,7 @@ import { MdDelete } from 'react-icons/md';
 import { BsPencilSquare } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 import Swal from 'sweetalert2';
+import { Tooltip } from 'react-tooltip';
 
 const ArtCard = ({ product, isDelete, deleted, setDeleted }) => {
   const handleDelete = () => {
@@ -99,10 +100,10 @@ const ArtCard = ({ product, isDelete, deleted, setDeleted }) => {
 
             {isDelete && (
               <div className="flex gap-4 items-center justify-center leading-none pt-3">
-                <div className="tooltip tooltip-left" data-tip="remove">
+                <div data-tooltip-id="my-tooltip" data-tooltip-content="Delete Item">
                   <MdDelete onClick={handleDelete} className="text-2xl cursor-pointer text-primary" />
                 </div>
-                <div className="tooltip tooltip-left" data-tip="remove">
+                <div data-tooltip-id="my-tooltip" data-tooltip-content="Update Item">
                   <Link to={`/updateProduct/${product._id}`}>
                     <BsPencilSquare className="text-xl text-primary cursor-pointer" />
                   </Link>
@@ -112,6 +113,7 @@ const ArtCard = ({ product, isDelete, deleted, setDeleted }) => {
           </div>
         </div>
       </div>
+      <Tooltip id="my-tooltip" />
     </div>
   );
 };
