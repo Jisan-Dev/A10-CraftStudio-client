@@ -52,8 +52,7 @@ const ArtCard = ({ product, isDelete }) => {
             {/* <div className={`flex justify-end`}> */}
             <button className="group flex items-center bg-transparent p-2 text-sm font-medium text-gray-600 mt-4">
               <Link
-                to={``}
-                // to={`/property-details/${id}`}
+                to={`/productDetails/${product._id}`}
                 className="relative pr-4 text-primary font-semibold after:transition-transform after:duration-500 after:ease-out after:absolute after:-bottom-1 after:-left-1 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 ">
                 View Details
               </Link>

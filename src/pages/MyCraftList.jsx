@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import ArtCard from '../components/ArtCard';
 import { AuthContext } from '../providers/AuthProvider';

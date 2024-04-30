@@ -8,6 +8,7 @@ import Homepage from '../pages/Homepage';
 import AddCraftItem from '../pages/AddCraftItem';
 import PrivateRoute from './PrivateRoute';
 import MyCraftList from '../pages/MyCraftList';
+import ProductDetails from '../pages/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/productDetails/:id',
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/add-craft-item',
