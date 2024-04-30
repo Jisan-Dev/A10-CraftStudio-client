@@ -74,14 +74,14 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu-horizontal px-1 text-base font-semibold gap-2 font-gsans text-base-content">
-            <li>
+            <li className="hover:text-primary">
               <NavLink
                 className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
                 to="/">
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="hover:text-primary">
               <NavLink
                 className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
                 to="/all-art&craft-items">
@@ -89,7 +89,7 @@ const Header = () => {
               </NavLink>
             </li>
             {user && (
-              <li>
+              <li className="hover:text-primary">
                 <NavLink
                   className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
                   to="/add-craft-item">
@@ -98,7 +98,7 @@ const Header = () => {
               </li>
             )}
             {user && (
-              <li className="hover:text-neutral-900">
+              <li className="hover:text-primary">
                 <NavLink
                   className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'bg-primary text-white hover:bg-primary py-2 px-4 rounded-lg' : 'py-2 px-4')}
                   to="/my-art&craft_list">
