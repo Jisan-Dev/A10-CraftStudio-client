@@ -10,7 +10,7 @@ const AddCraftItem = () => {
 
   // const [product, setProduct] = useState({});
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/productDetails/${id}`)
+  //   fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/productDetails/${id}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setProduct(data);
@@ -20,7 +20,7 @@ const AddCraftItem = () => {
 
   const handleAddProduct = (data) => {
     console.log(data);
-    fetch('http://localhost:5000/addProduct', {
+    fetch('https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/addProduct', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),

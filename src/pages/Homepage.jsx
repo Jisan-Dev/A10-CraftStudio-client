@@ -15,7 +15,7 @@ const Homepage = () => {
   const [categories, setCategories] = useState([]);
   const allProducts = useLoaderData();
   useEffect(() => {
-    fetch('http://localhost:5000/categories')
+    fetch('https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/categories')
       .then((res) => res.json())
       .then((categories) => {
         setCategories(categories);

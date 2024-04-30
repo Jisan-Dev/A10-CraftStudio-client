@@ -7,7 +7,7 @@ const Category = () => {
   const [products, setProducts] = useState([]);
   console.log(name);
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${name}`)
+    fetch(`https://a10-craft-studio-server-d0tjibpzg-jisans-projects.vercel.app/category/${name}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
