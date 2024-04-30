@@ -111,12 +111,15 @@ const Homepage = () => {
         </header>
         <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((category) => (
-            <div key={category._id} className="block rounded-lg p-4 shadow-sm shadow-primary border-t border-t-primary font-gsans cursor-pointer">
+            <Link
+              to={`/category/${category.subcategory_name}`}
+              key={category._id}
+              className="block rounded-lg p-4 shadow-sm shadow-primary border-t border-t-primary font-gsans cursor-pointer">
               <div>
                 <img src={category.image} className="h-56 w-full rounded-md object-cover" />
               </div>
               <h2 className="font-semibold text-primary mt-2">{category.subcategory_name}</h2>
-            </div>
+            </Link>
           ))}
         </main>
       </section>

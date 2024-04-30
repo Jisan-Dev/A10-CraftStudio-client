@@ -11,6 +11,7 @@ import MyCraftList from '../pages/MyCraftList';
 import ProductDetails from '../pages/ProductDetails';
 import UpdateCraftItem from '../pages/UpdateCraftItem';
 import AllCraftItems from '../pages/AllCraftItems';
+import Category from '../pages/Category';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: '/all-art&craft-items',
         element: <AllCraftItems />,
         loader: () => fetch('http://localhost:5000/allProducts'),
+      },
+      {
+        path: '/category/:name',
+        element: <Category />,
       },
       {
         path: '/productDetails/:id',
