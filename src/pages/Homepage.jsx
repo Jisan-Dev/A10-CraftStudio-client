@@ -9,10 +9,19 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Link, useLoaderData } from 'react-router-dom';
 import ArtCard from '../components/ArtCard';
+import { useEffect, useState } from 'react';
 
 const Homepage = () => {
+  const [categories, setCategories] = useState([]);
   const allProducts = useLoaderData();
-  console.log('allProducts', allProducts);
+  useEffect(() => {
+    fetch('http://localhost:5000/categories')
+      .then((res) => res.json())
+      .then((categories) => {
+        setCategories(categories);
+        console.log(categories);
+      });
+  }, []);
   return (
     <div className="container mx-auto font-gsans">
       <Swiper
@@ -91,6 +100,23 @@ const Homepage = () => {
         <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {allProducts.map((product) => (
             <ArtCard key={product._id} product={product} />
+          ))}
+        </main>
+      </section>
+
+      <section className="my-24">
+        <header>
+          <h1 className="text-4xl font-bold text-center mb-2">Art & Craft Categories</h1>
+          <p className="text-center text-xl text-base-content font-medium mb-4">Find the best craft and art items you need</p>
+        </header>
+        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {categories.map((category) => (
+            <div key={category._id} className="block rounded-lg p-4 shadow-sm shadow-primary border-t border-t-primary font-gsans cursor-pointer">
+              <div>
+                <img src={category.image} className="h-56 w-full rounded-md object-cover" />
+              </div>
+              <h2 className="font-semibold text-primary mt-2">{category.subcategory_name}</h2>
+            </div>
           ))}
         </main>
       </section>
