@@ -140,8 +140,9 @@ const Homepage = () => {
                   <div className="grid content-center gap-4">
                     <div className="p-6 rounded shadow-lg bg-base-200">
                       <p>
-                        An audire commodo habemus cum. Ne sed corrumpit repudiandae. Tota aliquip democritum pro in, nec democritum intellegam ne. Propriae volutpat dissentiet ea
-                        sit, nec at lorem inani tritani, an ius populo perfecto vituperatoribus. Eu cum case modus salutandi, ut eum vocent sensibus reprehendunt.
+                        At Craft_Studio, I discovered a treasure trove of artistic delights. Their vast selection of high-quality supplies inspires me to push the boundaries of my
+                        creativity. The knowledgeable staff and insightful resources have been invaluable in elevating my skills. Craft_Studio is a true haven for artists of all
+                        levels
                       </p>
                       <div className="flex items-center mt-4 space-x-4">
                         <img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-12 h-12 bg-center bg-cover rounded-full bg-gray-500" />
@@ -153,8 +154,10 @@ const Homepage = () => {
                     </div>
                     <div className="p-6 rounded shadow-lg bg-base-200">
                       <p>
-                        Sit wisi sapientem ut, pri civibus temporibus voluptatibus et, ius cu hinc fabulas. Nam meliore minimum et, regione convenire cum id. Ex pro eros mucius
-                        consectetuer, pro magna nulla nonumy ne, eam putent iudicabit consulatu cu.
+                        {/* Sit wisi sapientem ut, pri civibus temporibus voluptatibus et, ius cu hinc fabulas. Nam meliore minimum et, regione convenire cum id. Ex pro eros mucius
+                        consectetuer, pro magna nulla nonumy ne, eam putent iudicabit consulatu cu. */}
+                        At Craft_Studio, I discovered a treasure trove of artistic delights. Their vast selection of high-quality supplies inspires me to push the boundaries of my
+                        creativity.
                       </p>
                       <div className="flex items-center mt-4 space-x-4">
                         <img src="https://source.unsplash.com/50x50/?portrait?2" alt="" className="w-12 h-12 bg-center bg-cover rounded-full bg-gray-500" />
@@ -168,9 +171,9 @@ const Homepage = () => {
                   <div className="grid content-center gap-4">
                     <div className="p-6 rounded shadow-lg bg-base-200">
                       <p>
-                        Putant omnium elaboraret per ut. Id dicta tritani nominavi quo, mea id justo errem elaboraret. Agam mollis scripserit ea his, ut nec postea verear
-                        persecuti. Ea noster senserit eam, ferri omittantur ei nec. Id mel solet libris efficiantur, commune explicari et eos. Case movet ad est, sed tota vocent
-                        appetere ea.
+                        At Craft_Studio, I discovered a treasure trove of artistic delights. Their vast selection of high-quality supplies inspires me to push the boundaries of my
+                        creativity. The knowledgeable staff and insightful resources have been invaluable in elevating my skills. Craft_Studio is a true haven for artists of all
+                        levels.
                       </p>
                       <div className="flex items-center mt-4 space-x-4">
                         <img src="https://source.unsplash.com/50x50/?portrait?3" alt="" className="w-12 h-12 bg-center bg-cover rounded-full bg-gray-500" />
@@ -182,9 +185,9 @@ const Homepage = () => {
                     </div>
                     <div className="p-6 rounded shadow-lg bg-base-200">
                       <p>
-                        Te omnes virtute volutpat sed. Ei esse eros interesset vel, ei populo denique ocurreret vix, eu cum pertinax mandamus vituperatoribus. Solum nihil luptatum
-                        per ex, ei amet viderer eos. Ea illum labitur mnesarchum pro. Eius meis salutandi ei nam, alterum expetenda et nec. Expetenda intellegat at eum, per mazim
-                        sanctus honestatis ad. Ei noluisse invenire vix. Te ancillae patrioque qui, probo bonorum vivendum ex vim.
+                        Craft_Studio is a game-changer for artists like me. Their curated selection of top-notch materials and supplies inspires me to explore new techniques and
+                        mediums. The user-friendly website and seamless ordering process make it a joy to shop here. Highly recommended for anyone seeking to elevate their artistic
+                        journey. Craft_Studio is a true haven for artists of all levels.
                       </p>
                       <div className="flex items-center mt-4 space-x-4">
                         <img src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-12 h-12 bg-center bg-cover rounded-full bg-gray-500" />
