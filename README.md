@@ -9,3 +9,6 @@
 - Easy Navigation.
 - Easy Authentication
 - Adding own arts.
+
+## If you want to run this locally on your machine,
+- just run "npm run dev"
