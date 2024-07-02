@@ -11,4 +11,7 @@
 - Adding own arts.
 
 ### If you want to run this locally on your machine,
-- just run "npm run dev"
+- clone the repo in your machine
+- run "npm install" in terminal from the cloned directory
+- you'll have to create your own firebase project to integrate firebase auth and their keys in firebase.config.
+- and then run "npm run dev" to start the project in your local server.
